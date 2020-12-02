@@ -1,1 +1,501 @@
-[]
+[
+    {
+        "id": "da182025.06223",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cff01c60.e57a6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "enriquecrespo.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e448ec0.97b3318",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e42e6f04.920f8",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "e448ec0.97b3318",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d4625cf9.6a21c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3d4793c1.3cc20c",
+        "type": "ui_group",
+        "name": "Configuración",
+        "tab": "e448ec0.97b3318",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8a2b1c1b.2297a",
+        "type": "mqtt in",
+        "z": "da182025.06223",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "cff01c60.e57a6",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "febd3cfd.1895e",
+                "ad6698be.972a68",
+                "31fe1926.aa6c06"
+            ]
+        ]
+    },
+    {
+        "id": "febd3cfd.1895e",
+        "type": "debug",
+        "z": "da182025.06223",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ad6698be.972a68",
+        "type": "ui_gauge",
+        "z": "da182025.06223",
+        "name": "",
+        "group": "e42e6f04.920f8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "35",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "{{MAX}}",
+        "seg2": "{{MIN}}",
+        "x": 700,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "31fe1926.aa6c06",
+        "type": "switch",
+        "z": "da182025.06223",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "MAX",
+                "vt": "flow"
+            },
+            {
+                "t": "lt",
+                "v": "MIN",
+                "vt": "flow"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "7c27d23.cd4e62c"
+            ],
+            [
+                "da9dca0a.a0a798"
+            ],
+            [
+                "7fd5be5c.fbda4"
+            ]
+        ]
+    },
+    {
+        "id": "e3aedfb7.d1b9f",
+        "type": "ui_text",
+        "z": "da182025.06223",
+        "group": "e42e6f04.920f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Confort",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 760,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7c27d23.cd4e62c",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hace Calor",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "1d784aec.4c5d25"
+            ]
+        ]
+    },
+    {
+        "id": "4c5347e8.d70d28",
+        "type": "e-mail",
+        "z": "da182025.06223",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "aprendiendoraspberrypi@gmail.com",
+        "dname": "",
+        "x": 750,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "d0f79bf5.1f55c8",
+        "type": "debug",
+        "z": "da182025.06223",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "da9dca0a.a0a798",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hace Frio",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "1d784aec.4c5d25"
+            ]
+        ]
+    },
+    {
+        "id": "7fd5be5c.fbda4",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Todo OK",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 360,
+        "wires": [
+            [
+                "1d784aec.4c5d25"
+            ]
+        ]
+    },
+    {
+        "id": "1d784aec.4c5d25",
+        "type": "rbe",
+        "z": "da182025.06223",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "e3aedfb7.d1b9f",
+                "d0f79bf5.1f55c8",
+                "4c5347e8.d70d28"
+            ]
+        ]
+    },
+    {
+        "id": "de54c969.42f228",
+        "type": "ui_slider",
+        "z": "da182025.06223",
+        "name": "",
+        "label": "MAX",
+        "tooltip": "",
+        "group": "3d4793c1.3cc20c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": 0,
+        "max": "35",
+        "step": 1,
+        "x": 240,
+        "y": 540,
+        "wires": [
+            [
+                "3d3a6ad9.786bc6"
+            ]
+        ]
+    },
+    {
+        "id": "7ddbfead.61d8a",
+        "type": "ui_slider",
+        "z": "da182025.06223",
+        "name": "",
+        "label": "MIN",
+        "tooltip": "",
+        "group": "3d4793c1.3cc20c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": 0,
+        "max": "35",
+        "step": 1,
+        "x": 240,
+        "y": 620,
+        "wires": [
+            [
+                "6bb73791.f14248"
+            ]
+        ]
+    },
+    {
+        "id": "3d3a6ad9.786bc6",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "MAX",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6bb73791.f14248",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "MIN",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    }
+]
